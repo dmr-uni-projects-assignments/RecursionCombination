@@ -10,13 +10,24 @@ package com.mycompany.recursioncombination;
  */
 public class Iterative extends Combination {
 
+    private int fact(int val) {
+        if (val < 0) {
+            return -1; // not possible!
+        }
+
+        int retVal = 1;
+        for (int i = 1; i <= val; i++) {
+            retVal *= i;
+        }
+        return retVal;
+    }
+
     public int combination(int n, int r) {
         if (r > n) {
             return -1; // not possible!
         }
-        if (r == 0 || r == n) {
-            return 1;
-        }
-        return combination(n - 1, r - 1) + combination(n - 1, r);
+
+        // nCr = (n!)/((n-r)!r!)
+        return (fact(n)) / ((fact(n - r)) * fact(r));
     }
 }
