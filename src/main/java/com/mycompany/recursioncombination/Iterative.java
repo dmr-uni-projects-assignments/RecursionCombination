@@ -10,7 +10,7 @@ package com.mycompany.recursioncombination;
  */
 public class Iterative extends Combination {
 
-    private int fact(int val) {
+    private long fact(long val) {
         if (val < 0) {
             return -1; // not possible!
         }
@@ -22,7 +22,7 @@ public class Iterative extends Combination {
         return retVal;
     }
 
-    public int combination(int n, int r) {
+    public long combination(long n, long r) {
         if (r > n) {
             return -1; // not possible!
         }

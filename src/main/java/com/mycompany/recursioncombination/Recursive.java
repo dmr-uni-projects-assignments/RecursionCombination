@@ -10,7 +10,7 @@ package com.mycompany.recursioncombination;
  */
 public class Recursive extends Combination {
 
-    public int combination(int n, int r) {
+    public long combination(long n, long r) {
 //        System.out.println(n + " " + r);
         if (r > n) {
             return -1; // not possible!

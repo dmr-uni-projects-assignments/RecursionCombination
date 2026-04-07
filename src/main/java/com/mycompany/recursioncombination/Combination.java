@@ -9,5 +9,5 @@ package com.mycompany.recursioncombination;
  * @author sph
  */
 public abstract class Combination {
-    public int combination(int n, int r) { return 0; }
+    public long combination(long n, long r) { return 0; }
 }
