@@ -33,19 +33,23 @@ public class RecursionCombination {
 
         System.out.println("Testing function limits: ");
         long v = 1;
+        long vInc = 2;
         long recuLimit = 0;
         long iterLimit = 0;
 
         while (true) {
-            System.out.println("Testing " + v + "C" + v / 2);
+//            System.out.println("Testing " + v + "C" + v / 2);
 
             if (iterLimit == 0) {
                 try {
                     long iterres = iter.combination(v, 1);
                 } catch (Throwable e) {
                     iterLimit = v;
-                    System.out.println("Error " + e + " occured during iteration.");
+                    System.out.println("Error " + e + " occured during iteration at " + iterLimit);
                 }
+            } else {
+                v = 0;
+                vInc *= vInc;
             }
 
             if (recuLimit == 0) {
@@ -53,16 +57,19 @@ public class RecursionCombination {
                     long recures = recu.combination(v, 1);
                 } catch (Throwable e) {
                     recuLimit = v;
-                    System.out.println("Error " + e + " occured during recursion.");
+                    System.out.println("Error " + e + " occured during recursion at " + recuLimit);
                 }
+            } else {
+                v = 0;
+                vInc *= vInc;
             }
-            
+
             if ((iterLimit != 0) && (recuLimit != 0)) {
                 System.out.println("Iteration Limit: " + iterLimit + "\tRecursion Limit: " + recuLimit);
                 break;
             }
 
-            v++;
+            v += vInc / 2;
         }
 
     }
