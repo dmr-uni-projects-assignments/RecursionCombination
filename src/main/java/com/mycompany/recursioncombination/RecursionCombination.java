@@ -45,7 +45,7 @@ public class RecursionCombination {
                     long iterres = iter.combination(v, 1);
                 } catch (Throwable e) {
                     iterLimit = v;
-                    System.out.println("Error " + e + " occured during iteration at " + iterLimit);
+                    System.out.println("Error " + e + " occurred during iteration at " + iterLimit);
                 }
             } else {
                 v = 0;
@@ -57,7 +57,7 @@ public class RecursionCombination {
                     long recures = recu.combination(v, 1);
                 } catch (Throwable e) {
                     recuLimit = v;
-                    System.out.println("Error " + e + " occured during recursion at " + recuLimit);
+                    System.out.println("Error " + e + " occurred during recursion at " + recuLimit);
                 }
             } else {
                 v = 0;
